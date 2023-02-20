@@ -16,8 +16,11 @@
 ## 环境配置
 
 ### 安装node.js
+注意版本为16.14.2
 
 https://nodejs.org/zh-cn/download/
+http://nodejs.cn/download/
+
 
 ### 安装mongodb 4.2版本
 
@@ -31,43 +34,29 @@ https://www.mongodb.com/try/download/community
 md '\data\db'
 ```
 
-
 C:\Program Files\MongoDB\Server\4.2\bin
 
 启动mongod，启动mongo
 
 ```bash
+//连接数据库
 use test_system
 //测试
 db.adminusers.insert({name:"root",password:"root"})
 ```
 
+## 安装依赖
+server/adminorteacher/student
+```bash
+npm i
+```
 
-登录管理员端
-
-用户名：root
-
-密码：root
+如果报错可以先清除缓存
+```bash
+npm cache clear --force
+```
 
 ## 启动项目
 
-启动项目前先安装依赖
-
-```bash
-npm cache clear --force // 清除缓存
-npm install
-```
-
 启动顺序:server→admin端→学生端
-修改成绩页面，修改学生端页面
-先启动server，再启动管理员端，最后启动学生端
 
-
-文件名:
-
-node_modules 为依赖包（不用看）
-pubilc 框架自带的（不用看）
-
-src→assets→放置静态文件例如图片
-src→network→axios配置文件
-...待完善
